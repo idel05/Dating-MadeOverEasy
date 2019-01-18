@@ -11,11 +11,7 @@ import java.util.zip.Inflater;
 
 public class PreferenceFragment extends Fragment {
 
-   /* @Override
-    public View onCreateView(LayoutInflater, Inflater, ViewGroup view, Bundle bundle);
-    {
 
-              
-    }*/
+    
 
 }
