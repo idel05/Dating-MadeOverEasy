@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="320dp"
+        tools:layout_editor_absoluteY="404dp">
 
         <TextView
             android:id="@+id/textview2"
@@ -17,7 +19,7 @@
             android:text="@string/textview"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="44dp"
-            tools:text="Preference Content" />
+            tools:text="Egg Type!" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

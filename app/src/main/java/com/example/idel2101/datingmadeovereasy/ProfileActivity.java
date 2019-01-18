@@ -86,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity
 
 
 
-        if (id == R.id.egg_type) { }
+        if (id == R.id.egg_profile) { }
             // Handle the camera action
        // } else if (id == R.id.nav_gallery) {
 
