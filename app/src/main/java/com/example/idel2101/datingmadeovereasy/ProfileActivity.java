@@ -63,6 +63,14 @@ public class ProfileActivity extends AppCompatActivity
         EditText firstNameEdit = (EditText) findViewById(R.id.edit_text);
 
     }
+    public void lastNameView () {
+        TextView lastNameVeiw = (TextView) findViewById(R.id.text_view);
+
+    }
+    public void lastNameEditText () {
+        EditText lastNameEdit = (EditText) findViewById(R.id.edit_text);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
