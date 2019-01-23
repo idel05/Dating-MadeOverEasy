@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +53,15 @@ public class ProfileActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void firstNameView () {
+        TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
+
+    }
+    public void firstNameEditText () {
+        EditText firstNameEdit = (EditText) findViewById(R.id.edit_text);
+
     }
 
     @Override

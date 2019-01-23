@@ -17,5 +17,6 @@ public class  PreferenceFragment extends Fragment {
     @Override
     public LayoutInflater onGetLayoutInflater(@Nullable Bundle savedInstanceState) {
         return super.onGetLayoutInflater(savedInstanceState);
+
     }
 }
