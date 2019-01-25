@@ -104,16 +104,14 @@ public class ProfileActivity extends AppCompatActivity
         Fragment contentFragment = null;
 
 
-        if (id == R.id.egg_profile) { }
-            // Handle the camera action
-       // } else if (id == R.id.nav_gallery) {
+        if (id == R.id.egg_profile) {
+            setContentView(R.layout.eggtype);
 
-//       / } else if (id == R.id.nav_slideshow)
 
-  //     } else if (id == R.id.nav_manage) {
-        // if (id == R.id.nav_share) {
+        }
 
-     //   } else if (id == R.id.nav_send) {
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
