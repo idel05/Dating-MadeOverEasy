@@ -13,15 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import android.util.Log;
+
+import com.backendless.Backendless;
+
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = ProfileActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "about to setContentView");
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,6 +43,8 @@ public class ProfileActivity extends AppCompatActivity
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
+        Log.i(TAG, "drawer is " + drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -71,7 +80,23 @@ public class ProfileActivity extends AppCompatActivity
         EditText lastNameEdit = (EditText) findViewById(R.id.edit_text);
 
     }
+    public void submitName () {
+        final Button submitName = (Button) findViewById(R.id.button);
+        submitName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Backendless.Data.of()
 
+            }
+
+        });
+    }
+    public void onClick() {
+        lastNameEditText();
+        firstNameEditText();
+
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -85,6 +110,7 @@ public class ProfileActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.i(TAG, "id is " + id);
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -101,21 +127,17 @@ public class ProfileActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //step 22
-        Fragment contentFragment = null;
-
+        //Fragment contentFragment = null;
 
         if (id == R.id.egg_profile) {
             setContentView(R.layout.eggtype);
-
-
         }
-
-
-
-
-
+        Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        Log.i(TAG, "drawer is " + drawer);
+
+
+        //drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
