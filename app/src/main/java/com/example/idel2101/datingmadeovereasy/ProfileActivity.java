@@ -81,22 +81,14 @@ public class ProfileActivity extends AppCompatActivity
 
     }
     public void submitName () {
-        final Button submitName = (Button) findViewById(R.id.button);
-        submitName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              
+        final Button submitName = (Button) findViewById(R.id.SubmitName);
 
-            }
-
-        });
     }
-    public void onClick() {
-        lastNameEditText();
-        firstNameEditText();
+    public void onSubmitNameClick(View v) {
 
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -129,12 +121,13 @@ public class ProfileActivity extends AppCompatActivity
         //step 22
         //Fragment contentFragment = null;
 
-        if (id == R.id.egg_profile) {
+        if (id == R.id.egg_type) {
             setContentView(R.layout.eggtype);
         }
+
         Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        Log.i(TAG, "drawer is " + drawer);
+      //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+       // Log.i(TAG, "drawer is " + drawer);
 
 
         //drawer.closeDrawer(GravityCompat.START);

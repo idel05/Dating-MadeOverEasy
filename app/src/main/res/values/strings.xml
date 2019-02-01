@@ -7,4 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="textview">TextView</string>
+    <string name="SubmitName">Submit</string>
+    <string name="firstNameView">First Name</string>
+    <string name="lastNameView">Last Name</string>
 </resources>

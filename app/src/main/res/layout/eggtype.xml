@@ -14,7 +14,7 @@
             android:id="@+id/firstNameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+id/firstNameView" />
+            android:text="@string/firstNameView" />
 
         <EditText
             android:id="@+id/firstNameEdit"
@@ -22,14 +22,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@+id/firstNameEditText"
-            tools:text="First Name" />
+            android:text="@string/firstNameView" />
 
         <TextView
             android:id="@+id/lastNameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+id/lastNameView" />
+            android:text="@string/lastNameView" />
 
         <EditText
             android:id="@+id/lastNameEdit"
@@ -37,8 +36,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@+id/lastNameEditText"
-            tools:text="Last Name" />
+            android:text="@string/lastNameView" />
+
+        <Button
+            android:id="@+id/SubmitName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSubmitNameClick"
+            android:text="@string/SubmitName" />
 
     </LinearLayout>
 
