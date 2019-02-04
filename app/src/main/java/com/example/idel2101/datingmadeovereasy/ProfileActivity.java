@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.util.Log;
 
 import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -63,29 +65,41 @@ public class ProfileActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+    String FirstName;
+    String LastName;
     public void firstNameView () {
         TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
 
     }
-    public void firstNameEditText () {
+    public String firstNameEditText () {
         EditText firstNameEdit = (EditText) findViewById(R.id.edit_text);
 
+return FirstName;
     }
     public void lastNameView () {
         TextView lastNameVeiw = (TextView) findViewById(R.id.text_view);
 
     }
-    public void lastNameEditText () {
+    public String lastNameEditText () {
         EditText lastNameEdit = (EditText) findViewById(R.id.edit_text);
-
+return LastName;
     }
     public void submitName () {
         final Button submitName = (Button) findViewById(R.id.SubmitName);
 
     }
     public void onSubmitNameClick(View v) {
+        Backendless.Data.of(ProfileActivity.class).save(FirstName, new AsyncCallback<EggProfile>() {
+            @Override
+            public void handleResponse(Profile response) {
 
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+            }
+        })
 
     }
 
