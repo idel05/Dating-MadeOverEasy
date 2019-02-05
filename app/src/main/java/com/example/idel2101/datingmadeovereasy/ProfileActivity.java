@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import android.util.Log;
 
 import com.backendless.Backendless;
@@ -90,8 +89,8 @@ return LastName;
     }
     public void onSubmitNameClick(View v) {
         Backendless.Data.of(ProfileActivity.class).save(FirstName, new AsyncCallback<EggProfile>() {
-            @Override
-            public void handleResponse(Profile response) {
+
+            public void handleResponse(ProfileActivity response) {
 
             }
 
@@ -99,7 +98,7 @@ return LastName;
             public void handleFault(BackendlessFault fault) {
 
             }
-        })
+        });
 
     }
 
