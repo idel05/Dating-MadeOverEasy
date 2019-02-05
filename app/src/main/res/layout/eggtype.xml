@@ -14,7 +14,8 @@
             android:id="@+id/firstNameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/firstNameView" />
+            android:text="@string/firstNameView"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/firstNameEdit"
@@ -22,13 +23,15 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/firstNameView" />
+            android:text="@string/firstNameView"
+            android:textColor="@color/colorSecondaryText" />
 
         <TextView
             android:id="@+id/lastNameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lastNameView" />
+            android:text="@string/lastNameView"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/lastNameEdit"
@@ -36,14 +39,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/lastNameView" />
+            android:text="@string/lastNameView"
+            android:textColor="@color/colorSecondaryText" />
 
         <Button
             android:id="@+id/SubmitName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onSubmitNameClick"
-            android:text="@string/SubmitName" />
+            android:text="@string/SubmitName"
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 
