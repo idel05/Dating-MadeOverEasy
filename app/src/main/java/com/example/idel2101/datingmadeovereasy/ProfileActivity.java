@@ -23,7 +23,7 @@ import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 
 public class ProfileActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, NavigationView.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
     private static final String TAG = ProfileActivity.class.getSimpleName();
 
     @Override
@@ -42,7 +42,6 @@ public class ProfileActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,22 +65,26 @@ public class ProfileActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
     String FirstName;
 
-    public void firstNameView () {
+    public void firstNameView() {
         TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
 
     }
-    public String firstNameEditText () {
+
+    public String firstNameEditText() {
         EditText firstNameEdit = (EditText) findViewById(R.id.edit_text);
 
-return FirstName;
+        return FirstName;
     }
-    public void lastNameView () {
+
+    public void lastNameView() {
         TextView lastNameVeiw = (TextView) findViewById(R.id.text_view);
 
     }
-    public String lastNameEditText () {
+
+    public String lastNameEditText() {
         EditText lastNameEdit = (EditText) findViewById(R.id.lastNameEdit);
         String LastName = lastNameEdit.getText().toString();
         Log.i(TAG, "lastName is " + LastName);
@@ -89,10 +92,11 @@ return FirstName;
 
     }
 
-    public void submitName () {
+    public void submitName() {
         final Button submitName = (Button) findViewById(R.id.SubmitName);
 
     }
+
     public void onSubmitNameClick(View v) {
         Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
         Log.i(TAG, "onSubmitNameClick is working");
@@ -134,21 +138,22 @@ return FirstName;
             setContentView(R.layout.eggtype);
         }
         Button submitButton = (Button) findViewById(R.id.SubmitName);
-        submitButton.setOnClickListener(this);
+        submitButton.setOnClickListener(new SubmitButtonClass());
+
 
         Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
-      //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-       // Log.i(TAG, "drawer is " + drawer);
+        //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        // Log.i(TAG, "drawer is " + drawer);
 
 
         //drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @Override
-    public void onClick(View v)
-    {
-        Log.i(TAG, "onClick");
-        Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
+    public class SubmitButtonClass implements View.OnClickListener {
+        public void onClick(View v) {
+            Log.i(TAG, "lastNameEditText returns " + lastNameEditText());
+        }
+
     }
 }
