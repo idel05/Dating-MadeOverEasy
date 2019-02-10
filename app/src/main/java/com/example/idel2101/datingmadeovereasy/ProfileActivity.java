@@ -23,7 +23,7 @@ import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 
 public class ProfileActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, NavigationView.OnClickListener {
     private static final String TAG = ProfileActivity.class.getSimpleName();
 
     @Override
@@ -42,6 +42,8 @@ public class ProfileActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
@@ -65,7 +67,7 @@ public class ProfileActivity extends AppCompatActivity
         }
     }
     String FirstName;
-    String LastName;
+
     public void firstNameView () {
         TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
 
@@ -80,26 +82,20 @@ return FirstName;
 
     }
     public String lastNameEditText () {
-        EditText lastNameEdit = (EditText) findViewById(R.id.edit_text);
-return LastName;
+        EditText lastNameEdit = (EditText) findViewById(R.id.lastNameEdit);
+        String LastName = lastNameEdit.getText().toString();
+        Log.i(TAG, "lastName is " + LastName);
+        return LastName;
+
     }
+
     public void submitName () {
         final Button submitName = (Button) findViewById(R.id.SubmitName);
 
     }
     public void onSubmitNameClick(View v) {
-        Backendless.Data.of(ProfileActivity.class).save(FirstName, new AsyncCallback<EggProfile>() {
-
-            public void handleResponse(ProfileActivity response) {
-
-            }
-
-            @Override
-            public void handleFault(BackendlessFault fault) {
-
-            }
-        });
-
+        Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
+        Log.i(TAG, "onSubmitNameClick is working");
     }
 
     @Override
@@ -137,6 +133,8 @@ return LastName;
         if (id == R.id.egg_type) {
             setContentView(R.layout.eggtype);
         }
+        Button submitButton = (Button) findViewById(R.id.SubmitName);
+        submitButton.setOnClickListener(this);
 
         Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
       //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -145,5 +143,12 @@ return LastName;
 
         //drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        Log.i(TAG, "onClick");
+        Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
     }
 }
