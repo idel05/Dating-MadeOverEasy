@@ -67,20 +67,20 @@ public class ProfileActivity extends AppCompatActivity
     }
 
     String FirstName;
-
+    String LastName;
     public void firstNameView() {
         TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
 
     }
 
     public String firstNameEditText() {
-        EditText firstNameEdit = (EditText) findViewById(R.id.edit_text);
-
+        EditText firstNameEdit = (EditText) findViewById(R.id.firstNameEdit);
+String FirstName = firstNameEdit.getText().toString();
         return FirstName;
     }
 
     public void lastNameView() {
-        TextView lastNameVeiw = (TextView) findViewById(R.id.text_view);
+        TextView lastNameView = (TextView) findViewById(R.id.lastNameView);
 
     }
 
@@ -92,15 +92,32 @@ public class ProfileActivity extends AppCompatActivity
 
     }
 
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.FirstName = firstName;
+
+    }
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.LastName = lastName;
+
+    }
+
     public void submitName() {
         final Button submitName = (Button) findViewById(R.id.SubmitName);
 
     }
 
-    public void onSubmitNameClick(View v) {
-        Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
-        Log.i(TAG, "onSubmitNameClick is working");
-    }
+   // public void onSubmitNameClick(View v) {
+       // Log.i(TAG, "lastNameEditText returns" + lastNameEditText());
+       // Log.i(TAG, "onSubmitNameClick is working");
+   // }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -153,6 +170,11 @@ public class ProfileActivity extends AppCompatActivity
     public class SubmitButtonClass implements View.OnClickListener {
         public void onClick(View v) {
             Log.i(TAG, "lastNameEditText returns " + lastNameEditText());
+            Log.i(TAG, "firstNameEditText returns " + firstNameEditText());
+            getFirstName();
+            setFirstName(FirstName);
+            getLastName();
+            setLastName(LastName);
         }
 
     }
