@@ -25,6 +25,8 @@ import com.backendless.exceptions.BackendlessFault;
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
     private static final String TAG = ProfileActivity.class.getSimpleName();
+    public String FirstName;
+    public String LastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,33 +67,27 @@ public class ProfileActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+    public String lastNameEditText() {
+        EditText lastNameEdit = (EditText) findViewById(R.id.lastNameEdit);
+        LastName = lastNameEdit.getText().toString();
+        Log.i(TAG, "lastName is " + LastName);
+        return LastName;
 
-    String FirstName;
-    String LastName;
+    }
+    public String firstNameEditText() {
+        EditText firstNameEdit = (EditText) findViewById(R.id.firstNameEdit);
+        FirstName = firstNameEdit.getText().toString();
+        return FirstName;
+    }
     public void firstNameView() {
         TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
 
-    }
-
-    public String firstNameEditText() {
-        EditText firstNameEdit = (EditText) findViewById(R.id.firstNameEdit);
-String FirstName = firstNameEdit.getText().toString();
-        return FirstName;
     }
 
     public void lastNameView() {
         TextView lastNameView = (TextView) findViewById(R.id.lastNameView);
 
     }
-
-    public String lastNameEditText() {
-        EditText lastNameEdit = (EditText) findViewById(R.id.lastNameEdit);
-        String LastName = lastNameEdit.getText().toString();
-        Log.i(TAG, "lastName is " + LastName);
-        return LastName;
-
-    }
-
     public String getFirstName() {
         return FirstName;
     }
@@ -169,12 +165,13 @@ String FirstName = firstNameEdit.getText().toString();
 
     public class SubmitButtonClass implements View.OnClickListener {
         public void onClick(View v) {
-            Log.i(TAG, "lastNameEditText returns " + lastNameEditText());
-            Log.i(TAG, "firstNameEditText returns " + firstNameEditText());
+            Log.i(TAG, "LastName is " + LastName);
+            Log.i(TAG, "FirstName is " + FirstName);
             getFirstName();
             setFirstName(FirstName);
             getLastName();
             setLastName(LastName);
+
         }
 
     }
