@@ -80,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity
         return FirstName;
     }
     public void firstNameView() {
-        TextView firstNameVeiw = (TextView) findViewById(R.id.text_view);
+        TextView firstNameView = (TextView) findViewById(R.id.text_view);
 
     }
 
@@ -166,7 +166,7 @@ public class ProfileActivity extends AppCompatActivity
             Log.i(TAG, "LastName is " + LastName);
             Log.i(TAG, "FirstName is " + FirstName);
             //download LastName or FirstName to Backendless
-        
+
         }
 
     }
