@@ -144,15 +144,12 @@ public class ProfileActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        //step 22
-        //Fragment contentFragment = null;
-
         if (id == R.id.egg_type) {
             setContentView(R.layout.eggtype);
         }
+
         Button submitButton = (Button) findViewById(R.id.SubmitName);
         submitButton.setOnClickListener(new SubmitButtonClass());
-
 
         Log.i(TAG, "R.id.drawer_layout is " + R.id.drawer_layout);
         //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -162,16 +159,14 @@ public class ProfileActivity extends AppCompatActivity
         //drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
     public class SubmitButtonClass implements View.OnClickListener {
         public void onClick(View v) {
+            firstNameEditText();
+            lastNameEditText();
             Log.i(TAG, "LastName is " + LastName);
             Log.i(TAG, "FirstName is " + FirstName);
-            getFirstName();
-            setFirstName(FirstName);
-            getLastName();
-            setLastName(LastName);
-
+            //download LastName or FirstName to Backendless
+        
         }
 
     }
