@@ -28,4 +28,8 @@ public class EggProfile {
     public void setEggType(String eggType) {
         this.eggType = eggType;
     }
+
+    public void saveNewEggProfile(){
+        EggProfile eggProfile
+    }
 }

@@ -28,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity
     public String FirstName;
     public String LastName;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,7 +168,15 @@ public class ProfileActivity extends AppCompatActivity
             Log.i(TAG, "FirstName is " + FirstName);
             //download LastName or FirstName to Backendless
 
+            Backendless.Persistence.save( FirstName, new AsyncCallback<>() {
+                public void handleResponse( ProfileActivity response )
+                {
+                    // new Contact instance has been saved
+                }
+
+                public void handleFault( BackendlessFault fault )
         }
 
+        }
     }
 }
