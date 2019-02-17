@@ -22,6 +22,9 @@ import com.backendless.Backendless;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProfileActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
     private static final String TAG = ProfileActivity.class.getSimpleName();
@@ -166,17 +169,29 @@ public class ProfileActivity extends AppCompatActivity
             lastNameEditText();
             Log.i(TAG, "LastName is " + LastName);
             Log.i(TAG, "FirstName is " + FirstName);
+            HashMap person = new HashMap();
+            person.put("firstname", FirstName);
+            person.put("lastname", LastName);
+            //Backendless.Data.of("Person").save(person);
             //download LastName or FirstName to Backendless
+            Backendless.Data.of( "Person" ).save( person,
+                    new AsyncCallback<Map>()
+                    {
+                        @Override
+                        public void handleResponse( Map response )
+                        {
+                         Log.i(TAG, "save successful");
+                        }
 
-            Backendless.Persistence.save( FirstName, new AsyncCallback<>() {
-                public void handleResponse( ProfileActivity response )
-                {
-                    // new Contact instance has been saved
-                }
+                        @Override
+                        public void handleFault( BackendlessFault fault )
+                        {
+                         Log.i(TAG, "save error");
+                        }
+                    });
 
-                public void handleFault( BackendlessFault fault )
         }
+
 
         }
     }
-}
