@@ -30,6 +30,6 @@ public class EggProfile {
     }
 
     public void saveNewEggProfile(){
-        EggProfile eggProfile
+        EggProfile eggProfile;
     }
 }
